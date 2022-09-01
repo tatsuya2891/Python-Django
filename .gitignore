@@ -1,0 +1,7 @@
+#管理対象外ディレクトリ
+/venv-portfolio/include
+/venv-portfolio/Lib
+/venv-portfolio/Scripts
+
+#管理対象外ファイル
+/venv-portfolio/pyvenv.cfg
