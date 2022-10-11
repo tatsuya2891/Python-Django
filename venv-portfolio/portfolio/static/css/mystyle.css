@@ -1,10 +1,63 @@
-body, #wrapper{
-    display:flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: black;
+@media screen and (min-width:769px){
+    html body{
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .contena{
+        position: relative; /*position stickyの基点にするためrelativeをかける*/
+        display: flex; /*左エリア、右エリア横並び指定*/
+        flex-wrap: wrap; /*ボックスの折り返しか*/
+    }
+    /*左エリア*/
+    .column-l{
+        position: -webkit-sticky; /*Safari用*/
+        position: sticky;
+        top: 0;
+        width: 24%;
+        height: 100vh;
+        padding: 3%;
+        background-color: rgb(60, 115, 58);
+    }
+    /*右エリア*/
+    .column-r{
+        margin: 0;
+        /* padding: 10 10px 0 10px; */
+        width: 64%;
+        height: 100vh;
+        padding: 3%;
+        
+    }
+}
+/*＝＝＝＝＝＝＝＝＝＝＝768px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+@media screen and (max-width:768px){
+    .contena{
+      display: block;/*display:flex;を解除*/
+    }
+    section{
+      min-height:auto;/*縦を100vh⇒解除*/
+    }
+    
+    .column-l{
+        position:relative!important;/*position stickyを解除*/
+      width:100%;/*横幅を100%にして1列に見せる*/
+      height: 40vh;/*縦幅を100vh⇒40vh　※任意の高さに設定可能*/
+    }
+    .column-r{
+        width:100%;/*横幅を100%にして1列に見せる*/
+      }
 }
 
 footer{
-    margin-top: auto;
+    height: 30px;
+    background-color:yellow;
+    text-align: center;
+    
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: auto;
 }
